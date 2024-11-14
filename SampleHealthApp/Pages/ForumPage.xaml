@@ -1,0 +1,36 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleHealthApp.Pages.ForumPage"
+			 BackgroundColor="Black"
+             Title="Find a workout Buddy">
+
+		<ContentPage.Resources>
+			<ResourceDictionary>
+				<Color x:Key="textColor">White</Color>
+				<Color x:Key="boxColor">#44FFFFFF</Color>
+				<Style TargetType="Label">
+					<Setter Property="TextColor" Value="{StaticResource textColor}" />
+					<Setter Property="HorizontalOptions" Value="Center" />
+				</Style>
+			</ResourceDictionary>
+		</ContentPage.Resources>
+
+		<Grid RowSpacing="10" ColumnSpacing="5" Padding="5" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto" />
+				<ColumnDefinition Width="auto" />
+				<ColumnDefinition Width="auto" />
+				<ColumnDefinition Width="auto" />
+			</Grid.ColumnDefinitions>
+
+			<Image Source="forummap.png" Aspect="AspectFill" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+
+		</Grid>
+	</ContentPage>
