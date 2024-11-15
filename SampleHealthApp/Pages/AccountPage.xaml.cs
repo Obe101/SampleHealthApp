@@ -1,10 +1,13 @@
-﻿namespace SampleHealthApp.Pages;
+﻿using SampleHealthApp.ViewModels;
+
+namespace SampleHealthApp.Pages;
 
 public partial class AccountPage : ContentPage
 {
-        public AccountPage()
+        public AccountPage(AccountViewModel vm)
         {
             InitializeComponent();
+            BindingContext = vm;
         }
 }
 
