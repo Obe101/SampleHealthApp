@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using SampleHealthApp.Pages;
 using System.Collections.ObjectModel;
 
 namespace SampleHealthApp.ViewModels
@@ -36,6 +37,11 @@ namespace SampleHealthApp.ViewModels
                 workoutName.Remove(s);
             }
 
+        }
+        [RelayCommand]
+        async Task Tap(string s)
+        {
+            await Shell.Current.GoToAsync($"{nameof(DetailsPage)}?Text={s}");
         }
     }
 }
