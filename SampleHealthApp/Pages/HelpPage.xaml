@@ -2,27 +2,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SampleHealthApp.Pages.HelpPage"
              Title="Help / FAQ">
+    <Grid RowDefinitions="100, Auto, *" 
+      ColumnDefinitions=".75*, .25*"
+      Padding="10">
+        
+            <Border Stroke="#C49B33"
+                    StrokeThickness="4"
+                    Background="#2B0B98"
+                    Padding="100"
+                    Grid.RowSpan="2"
+                    Grid.ColumnSpan="4"
+                    HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="100,0,0,100" />
+                </Border.StrokeShape>
 
-    <StackLayout Padding="10" Spacing="5">
-		<Border Stroke="#C49B33"
-        StrokeThickness="4"
-        Background="#2B0B98"
-        Padding="16,8"
-        HorizontalOptions="Center">
-			<Border.StrokeShape>
-				<RoundRectangle CornerRadius="100,0,0,100" />
-			</Border.StrokeShape>
+                <Entry x:Name="editor"
+                       Placeholder="Ask your question"
+                       Grid.Row="1"
+                       Grid.Column="3"
+                       HeightRequest="250"
+                       TextChanged="OnEditorTextChanged"
+                       Completed="OnEditorCompleted"
+                       CharacterSpacing="0"
+                       MaxLength="250"
+	                   ClearButtonVisibility="WhileEditing"
+                       ReturnType ="Send" />
 
-			<Entry x:Name="editor"
-                Placeholder="Ask you question"
-	            HeightRequest="250"
-                TextChanged="OnEditorTextChanged"
-                Completed="OnEditorCompleted"
-	            CharacterSpacing="0"
-	            MaxLength="250"
-		        ClearButtonVisibility="WhileEditing"
-	            ReturnType ="Send" />
-		</Border>
-		
-    </StackLayout>
+            
+            </Border>
+        <Button Text="ASK"
+                Command="{Binding AddCommand}"
+                Grid.Row="3"
+                Grid.ColumnSpan="3"/>
+
+    </Grid>
+    
 </ContentPage>
